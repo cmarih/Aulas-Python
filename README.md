@@ -19,28 +19,40 @@ Instalar ambiente virtual para que seja possível instalar as dependências do P
 ` python -m venv <nome-que-desejar>`
 
 No terminal, coloquei da seguinte forma: 
+
 ![Terminal PowerShell](img-md/vm-python.png)
 
 No VS Code, ele cria um diretório da VM:
+
 ![Terminal PowerShell](img-md/vm.png)
 
 ## IMPORTANTE
 
->> O Windows bloqueia de forma automática Scripts de terceiros. Precisa ajustar a configuração do sistema, para que permita que scripts em Python seja executado sem falhas.
+> O Windows bloqueia de forma automática Scripts de terceiros. Precisa ajustar a configuração do sistema, para que permita que scripts em Python seja executado sem falhas.
 Para iniciar esse ajuste, precisa visualizar a política do windows. 
 
->> Abra o terminal poweshell em modo administrador:
+Abra o terminal poweshell em modo administrador:
+
 ![Terminal PowerShell](img-md/ps-admin.png)
+
 e digite o comando abaixo: 
+
 `Get-ExecutionPolicy`
+
 ![Terminal PowerShell](img-md/politica.png)
+
 Esse comando irá retornar uma das opções abaixo: 
+
 **RemoteSigned:** Essa opção permite a execução de Script, porém bloqueia downloads externos. _(Essa é a opção ideal)_   
+
 **Unrestricted:** Permite qualquer ação. _(Essa opção apresenta um certo risco)_
+
 **Restricted:** Não permite ações de scripts _(Essa geralmente é a opção padrão)_  
 
->> Caso retorne **Unrestricted** ou **Restricted**  é só digitar o comando abaixo no powershell para alterar:
+Caso retorne **Unrestricted** ou **Restricted**  é só digitar o comando abaixo no powershell para alterar:
+
 `Set-ExecutionPolicy RemoteSigned`
+
 ![Terminal PowerShell](img-md/remote-signed.png)
 
 Agora é só ativar o ambiente usando o comando abaixo:
@@ -48,6 +60,7 @@ Agora é só ativar o ambiente usando o comando abaixo:
 `.\nome-da-pasta-criada\Script\Activate>`
 
 No terminal, coloquei da seguinte forma e em seguida já mostra a VM ativa: 
+
 ![Terminal PowerShell](img-md/vm-activate.png)
 
 ### Instalando Dependências
